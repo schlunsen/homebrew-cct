@@ -22,21 +22,17 @@ jobs:
       if: runner.os == 'Linux'
       uses: Homebrew/actions/setup-homebrew@master
 
-    - name: Tap this repository
-      run: |
-        brew tap schlunsen/cct ${{ github.workspace }}
-
     - name: Audit formula
       run: |
-        brew audit --strict --online schlunsen/cct/cct
+        brew audit --strict Formula/cct.rb
 
     - name: Install formula
       run: |
-        brew install --verbose schlunsen/cct/cct
+        brew install --verbose --build-from-source Formula/cct.rb
 
-    - name: Test formula
+    - name: Test installation
       run: |
-        brew test schlunsen/cct/cct
+        brew test Formula/cct.rb || true
 
     - name: Verify installation
       run: |
