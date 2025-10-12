@@ -1,0 +1,44 @@
+name: Test Formula
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Homebrew
+      if: runner.os == 'Linux'
+      uses: Homebrew/actions/setup-homebrew@master
+
+    - name: Tap this repository
+      run: |
+        brew tap schlunsen/cct ${{ github.workspace }}
+
+    - name: Audit formula
+      run: |
+        brew audit --strict --online schlunsen/cct/cct
+
+    - name: Install formula
+      run: |
+        brew install --verbose schlunsen/cct/cct
+
+    - name: Test formula
+      run: |
+        brew test schlunsen/cct/cct
+
+    - name: Verify installation
+      run: |
+        which cct
+        cct --version || cct --help
