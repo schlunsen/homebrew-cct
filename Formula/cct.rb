@@ -1,28 +1,28 @@
 class Cct < Formula
   desc "High-performance CLI tool for Claude Code component templates and analytics"
   homepage "https://github.com/schlunsen/claude-templates-go"
-  version "0.0.6"
+  version "0.0.7"
 
   # This is a precompiled binary, no build tools required
   uses_from_macos "unzip" => :build
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.6/cct-darwin-arm64"
-      sha256 "48e26ae2cab72b9b9a11093fcaa4023375dded69ef2e52f4bbf6715c2e67cfc8"
+      url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.7/cct-darwin-arm64"
+      sha256 "3f5e914c0224dfdc3e0a5cc5d3a36f1249ad6325a1f20795239d0ab03275a44f"
     else
-      url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.6/cct-darwin-amd64"
-      sha256 "dc1058f326d5216bda60f901026f85e19490aae70e5ee2ce3ca4f3d47fdfab76"
+      url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.7/cct-darwin-amd64"
+      sha256 "097bcb57fd739bc9f2b4c20ad7abcafc6dc6154125697d8024b078432b0b758e"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.6/cct-linux-arm64"
-      sha256 "002bf628ffa5d71731917ba3db715cdeceacce3f628b05d0021aad08a66641ce"
+      url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.7/cct-linux-arm64"
+      sha256 "0f65a5238523031d8953bc17c0f8db687d91a1b517b0a61383d34e2fc04d4695"
     else
-      url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.6/cct-linux-amd64"
-      sha256 "ad04f8c368b6c7c3bf0a089a8a32f0192e57fd068a5b5397425b76cf47a4caf7"
+      url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.7/cct-linux-amd64"
+      sha256 "a22cc75b957596e4af9af9c02a9f2845e5f74a3f0f65dc85ac7b97d095c8d40d"
     end
   end
 
