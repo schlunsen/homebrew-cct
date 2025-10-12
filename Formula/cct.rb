@@ -3,6 +3,9 @@ class Cct < Formula
   homepage "https://github.com/schlunsen/claude-templates-go"
   version "0.0.1"
 
+  # This is a precompiled binary, no build tools required
+  uses_from_macos "unzip" => :build
+
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/schlunsen/claude-templates-go/releases/download/v0.0.1/cct-darwin-arm64"
@@ -24,7 +27,10 @@ class Cct < Formula
   end
 
   def install
-    bin.install Dir["cct-*"].first => "cct"
+    # The downloaded file is a precompiled binary
+    downloaded_file = Dir["cct-*"].first
+    bin.install downloaded_file => "cct"
+    chmod 0755, bin/"cct"
   end
 
   test do
