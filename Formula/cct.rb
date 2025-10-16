@@ -1,39 +1,33 @@
 class Cct < Formula
   desc "Claude Control Terminal - Control center and wrapper for Claude Code"
   homepage "https://github.com/schlunsen/claude-control-terminal"
-  version "0.4.0"
-
-  # This is a precompiled binary, no build tools required
-  uses_from_macos "unzip" => :build
+  version "0.4.1"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.0/cct-darwin-arm64"
-      sha256 "f90870ec85d432ccfea5df3d384bb08b71294adabff519b1e7869e799aa499b6"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.1/cct-darwin-arm64"
+      sha256 "d0f310c9208cea046a0b866e8e6e1f9ad3fb39d92f574cdafa320377442b6f3b"
     else
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.0/cct-darwin-amd64"
-      sha256 "4a2c946eade168cfeb2dfa7929211f98eb3ea26648e292d274ac2b220b2af971"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.1/cct-darwin-amd64"
+      sha256 "e043f997f41cdbb6396bf34453d15b11c33a1630f36fab16b9363bb75131bcdb"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.0/cct-linux-arm64"
-      sha256 "de6e4fd17de98ae0486e85612eb59e3c4fdd87ef78fc55be2c08be6279d2ec8e"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.1/cct-linux-arm64"
+      sha256 "ce757e1daec76df7d8eb17ecc3dfdb712f54bfdc9e638c5568f8938420c7def2"
     else
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.0/cct-linux-amd64"
-      sha256 "67ab585cea8b370d90edca307481a86ada57373c1d25363906ca7676c6675069"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.1/cct-linux-amd64"
+      sha256 "9f3bfc1235f0e9f42c0485815b6f1308e0234c41b0abb6a5180c5f8716cc6138"
     end
   end
 
   def install
-    # The downloaded file is a precompiled binary
-    downloaded_file = Dir["cct-*"].first
-    bin.install downloaded_file => "cct"
-    chmod 0755, bin/"cct"
+    bin.install Dir["cct-*"].first => "cct"
   end
 
   test do
-    system "#{bin}/cct", "--help"
+    assert_match version.to_s, shell_output("#{bin}/cct --version 2>&1", 0)
   end
 end
