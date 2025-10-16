@@ -1,28 +1,28 @@
 class Cct < Formula
   desc "Claude Control Terminal - Control center and wrapper for Claude Code"
   homepage "https://github.com/schlunsen/claude-control-terminal"
-  version "0.3.5"
+  version "0.4.0"
 
   # This is a precompiled binary, no build tools required
   uses_from_macos "unzip" => :build
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.3.5/cct-darwin-arm64"
-      sha256 "cfef1993ca8054527057b1e0a7963605b4fb30d6c879d2142b20882a50edbc20"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.0/cct-darwin-arm64"
+      sha256 "f90870ec85d432ccfea5df3d384bb08b71294adabff519b1e7869e799aa499b6"
     else
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.3.5/cct-darwin-amd64"
-      sha256 "bc1a97f143f1c0c179a66342db590452bdfb24b52965f8e204e051a80f9c682f"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.0/cct-darwin-amd64"
+      sha256 "4a2c946eade168cfeb2dfa7929211f98eb3ea26648e292d274ac2b220b2af971"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.3.3/cct-linux-arm64"
-      sha256 "5b438ffc61ac60078404fdca8e374e6de41d26ce02b5425ea00b3c9e823dacc8"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.0/cct-linux-arm64"
+      sha256 "de6e4fd17de98ae0486e85612eb59e3c4fdd87ef78fc55be2c08be6279d2ec8e"
     else
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.3.5/cct-linux-amd64"
-      sha256 "64eb6fef9c9ea9cf38ff0ccd5f99bac7b177823e0e9f65442fb18937dab73352"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.0/cct-linux-amd64"
+      sha256 "67ab585cea8b370d90edca307481a86ada57373c1d25363906ca7676c6675069"
     end
   end
 
