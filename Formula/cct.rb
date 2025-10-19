@@ -6,10 +6,10 @@ class Cct < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.0/cct-darwin-arm64"
-      sha256 "1d721799c29be0b585038a82817258743e16dbb85ab77f2994e61a9a93f47e85"
+      sha256 "bb34482e8834814523662347ff56bba223c047692d6e03a4edfa546c80ad3be6"
     else
       url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.0/cct-darwin-amd64"
-      sha256 "b3671e795e64cf0e981acc0c00e281c81a25131140b69ae62813e7cf827a84e8"
+      sha256 "5ad54aa643591190cfef32ccd6692798f2040181f9c0ca8d6a1aeaa654e759ad"
     end
   end
 
@@ -19,7 +19,7 @@ class Cct < Formula
       sha256 "e67019a16f30ffc9caa2fd2967ae34a273f79b4312ddcc6b891290daa647cef3"
     else
       url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.0/cct-linux-amd64"
-      sha256 "a0094074140cbd3b5a4dc6a076a7d4189d70dd2bf46c04ec733bada30f5fe310"
+      sha256 "c1d7ac9e39b810054020b463c4908dfc806f6ce70c0b87f1c967d9c77960cb6c"
     end
   end
 
