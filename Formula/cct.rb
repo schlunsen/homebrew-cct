@@ -1,15 +1,15 @@
 class Cct < Formula
   desc "Claude Control Terminal - Control center and wrapper for Claude Code"
   homepage "https://github.com/schlunsen/claude-control-terminal"
-  version "0.5.6"
+  version "0.5.7"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.6/cct-darwin-arm64"
-      sha256 "448f50b5a7b3ee8f6ded522987a5e8d6c86c11ad5059570de7f4b5726f9c4e92"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.7/cct-darwin-arm64"
+      sha256 "89b7ecc984638a5c054dee42731fa4b70096adbff80389e9492c59b054daa993"
     else
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.6/cct-darwin-amd64"
-      sha256 "f1025dd40710cea014b7ae1d99a35f0bc2f883c94abf0aabe9cd2446c14ba712"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.7/cct-darwin-amd64"
+      sha256 "611146cd3b543078ae536ddb3a5c33ecbe8d31711fcb6324ecccf4c71c4d0ce5"
     end
   end
 
@@ -18,8 +18,8 @@ class Cct < Formula
       url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.4.4/cct-linux-arm64"
       sha256 "e67019a16f30ffc9caa2fd2967ae34a273f79b4312ddcc6b891290daa647cef3"
     else
-      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.6/cct-linux-amd64"
-      sha256 "7dd63488308302690013975697a60b89bcbe97cc69f1727ac6d33bfa1f848ebe"
+      url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.5.7/cct-linux-amd64"
+      sha256 "942da147616e82a681906f4d38d19aac10c662f891afed0796076b584333dc98"
     end
   end
 
