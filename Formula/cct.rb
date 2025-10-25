@@ -16,7 +16,7 @@ class Cct < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.8.2/cct-linux-arm64"
-      sha256 "bb756635e6db4f2a9b6a1888c9cfb233662a960be4d76eaa64f06d7242928029"
+      sha256 "8bafd039270d3fd00b4c161039de9568dec2a612d9684bc8fe307fb9ba992f41"
     else
       url "https://github.com/schlunsen/claude-control-terminal/releases/download/v0.8.2/cct-linux-amd64"
       sha256 "ffd0db90bf5ddd3c24e510b60a9c467cc535742307655bc64a2f0a07b319e03e"
